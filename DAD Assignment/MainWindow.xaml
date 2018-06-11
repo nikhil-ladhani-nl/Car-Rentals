@@ -5,6 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DAD_Assignment"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid/>
+        Title="MainWindow" Height="350" Width="816">
+    <StackPanel>
+        <Menu Name="mainMenu" FontSize="20" Background="BlanchedAlmond" Height="58">
+            <MenuItem Name="CREmployee" Header="Profile Management">
+                <MenuItem Header="Add New Employee" />
+                <MenuItem Header="Display Customer"/>
+                <MenuItem Header="Manage Profile">
+                    <MenuItem Header="Customer"/>
+                    <MenuItem Header="Employee"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Name="CRStock" Header="Stock Management">
+                <MenuItem Header="Manage Cars">
+                    <MenuItem Name="SACItem"
+                        Header="Show All Cars"/>
+
+                    <MenuItem Name="ACItem" Header="Add Car"/>
+                    <MenuItem  Header="Search Car"/>
+                    <MenuItem Name="UPCItem" Header="Update Car Details"/>
+                </MenuItem>
+            </MenuItem >
+            <MenuItem x:Name="Login" Header="Login" />
+        </Menu>
+    </StackPanel>
 </Window>
