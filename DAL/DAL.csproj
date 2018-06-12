@@ -51,69 +51,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CarFeature.cs">
-      <DependentUpon>CarSalesModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CarModel.cs">
-      <DependentUpon>CarSalesModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CarSalesModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CarSalesModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CarSalesModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CarSalesModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CarSalesModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CarSalesModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Cars_Sold.cs">
-      <DependentUpon>CarSalesModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Customer.cs">
-      <DependentUpon>CarSalesModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Employee.cs">
-      <DependentUpon>CarSalesModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="IndividualCar.cs">
-      <DependentUpon>CarSalesModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Person.cs">
-      <DependentUpon>CarSalesModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="CarSalesModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CarSalesModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="CarSalesModel.edmx.diagram">
-      <DependentUpon>CarSalesModel.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="CarSalesModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CarSalesModel.edmx</DependentUpon>
-      <LastGenOutput>CarSalesModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="CarSalesModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CarSalesModel.edmx</DependentUpon>
-      <LastGenOutput>CarSalesModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
