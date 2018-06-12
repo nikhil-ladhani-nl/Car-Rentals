@@ -19,7 +19,6 @@
             </MenuItem>
             <MenuItem Name="CRStock" Header="Stock Management">
                 <MenuItem Header="Manage Cars">
-<<<<<<< HEAD
                     <MenuItem Name="SACDetails" Header="Show All Cars"/>
                     <MenuItem Name="CFSDetails" Header="Display Cars for Sale"/>
                     <MenuItem Name="ACDetails" Header="Add New Car Details"/>
@@ -34,15 +33,6 @@
 
                 </MenuItem>
             </MenuItem>
-=======
-                    <MenuItem Name="SACItem"
-                        Header="Show All Cars"/>
-                    <MenuItem Name="ACItem" Header="Add Car"/>
-                    <MenuItem  Header="Search Car"/>
-                    <MenuItem Name="UPCItem" Header="Update Car Details"/>
-                </MenuItem>
-            </MenuItem >
->>>>>>> master
         </Menu>
         <Label Content="Welcome to NBA Car Sales Limited" FontSize="40" HorizontalAlignment="Center"/>
     </StackPanel>
