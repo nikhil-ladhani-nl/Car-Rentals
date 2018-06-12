@@ -77,7 +77,6 @@
     <Compile Include="Profile Management\SearchEmployeeByID.xaml.cs">
       <DependentUpon>SearchEmployeeByID.xaml</DependentUpon>
     </Compile>
-=======
     <Compile Include="AddNewEmployee.xaml.cs">
       <DependentUpon>AddNewEmployee.xaml</DependentUpon>
     </Compile>
@@ -161,7 +160,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Profile Management\SearchEmployeeByID.xaml">
-      
     </Page>
     <Page Include="SearchAndUpdateCarDetails.xaml">
       <SubType>Designer</SubType>
