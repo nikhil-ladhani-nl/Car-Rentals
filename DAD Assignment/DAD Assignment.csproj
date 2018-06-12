@@ -56,18 +56,60 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddNewEmployee.xaml.cs">
+      <DependentUpon>AddNewEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayListofCarsforSale.xaml.cs">
+      <DependentUpon>DisplayListofCarsforSale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchAndUpdateCarDetails.xaml.cs">
+      <DependentUpon>SearchAndUpdateCarDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchCustomerByID.xaml.cs">
+      <DependentUpon>SearchCustomerByID.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AddNewCarDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNewEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DisplayListofCarsforSale.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AddNewCarDetails.xaml.cs">
+      <DependentUpon>AddNewCarDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SearchAndUpdateCarDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchCustomerByID.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -87,6 +129,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\DAL.CarFeature.datasource" />
+    <None Include="Properties\DataSources\DAL.CarModel.datasource" />
+    <None Include="Properties\DataSources\DAL.Cars_Sold.datasource" />
+    <None Include="Properties\DataSources\DAL.Customer.datasource" />
+    <None Include="Properties\DataSources\DAL.Employee.datasource" />
+    <None Include="Properties\DataSources\DAL.IndividualCar.datasource" />
+    <None Include="Properties\DataSources\DAL.Person.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

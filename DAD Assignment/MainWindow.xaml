@@ -20,13 +20,11 @@
                 <MenuItem Header="Manage Cars">
                     <MenuItem Name="SACItem"
                         Header="Show All Cars"/>
-
                     <MenuItem Name="ACItem" Header="Add Car"/>
                     <MenuItem  Header="Search Car"/>
                     <MenuItem Name="UPCItem" Header="Update Car Details"/>
                 </MenuItem>
             </MenuItem >
-            <MenuItem x:Name="Login" Header="Login" />
         </Menu>
     </StackPanel>
 </Window>

@@ -6,7 +6,12 @@
         xmlns:local="clr-namespace:DAD_Assignment"
         mc:Ignorable="d"
         Title="LoginPage" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Background="Beige">
+        <Label Content="Username:" FontSize="20" HorizontalAlignment="Left" Margin="177,160,0,0" VerticalAlignment="Top"/>
+        <Label Content="Password:" FontSize="20" HorizontalAlignment="Left" Margin="177,216,0,0" VerticalAlignment="Top"/>
+        <Label Content="NBA Car Sales Ltd." FontSize="30" HorizontalAlignment="Left" Margin="177,103,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="usernameTextBox" FontSize="20" HorizontalAlignment="Left" Height="24" Margin="374,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
+        <TextBox x:Name="passwordTextBox" FontSize="20" HorizontalAlignment="Left" Height="24" Margin="374,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
+        <Button x:Name="loginButton" Content="Login" FontSize="20" HorizontalAlignment="Left" Margin="374,285,0,0" VerticalAlignment="Top" Width="186"/>
     </Grid>
 </Window>
