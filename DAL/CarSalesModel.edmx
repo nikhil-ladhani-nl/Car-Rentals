@@ -356,7 +356,7 @@
           <End Role="CarFeature" Type="Self.CarFeature" Multiplicity="*" />
           <End Role="IndividualCar" Type="Self.IndividualCar" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="NBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="NBAEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CarFeatures" EntityType="Self.CarFeature" />
           <EntitySet Name="CarModels" EntityType="Self.CarModel" />
           <EntitySet Name="Cars_Sold" EntityType="Self.Cars_Sold" />
@@ -394,7 +394,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="NB_DADModelStoreContainer" CdmEntityContainer="NBEntities">
+        <EntityContainerMapping StorageEntityContainer="NB_DADModelStoreContainer" CdmEntityContainer="NBAEntities">
           <EntitySetMapping Name="CarFeatures">
             <EntityTypeMapping TypeName="NB_DADModel.CarFeature">
               <MappingFragment StoreEntitySet="CarFeature">

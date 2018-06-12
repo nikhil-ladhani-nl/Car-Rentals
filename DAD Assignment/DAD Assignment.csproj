@@ -168,6 +168,7 @@
     <None Include="Properties\DataSources\DAL.Customer.datasource" />
     <None Include="Properties\DataSources\DAL.Employee.datasource" />
     <None Include="Properties\DataSources\DAL.IndividualCar.datasource" />
+    <None Include="Properties\DataSources\DAL.NBAEntities.datasource" />
     <None Include="Properties\DataSources\DAL.Person.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
