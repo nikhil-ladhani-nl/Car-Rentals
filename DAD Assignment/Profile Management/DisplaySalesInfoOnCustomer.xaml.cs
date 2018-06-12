@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DAD_Assignment
+namespace DAD_Assignment.Stock_Management
 {
     /// <summary>
-    /// Interaction logic for AddNewCarDetails.xaml
+    /// Interaction logic for DisplaySalesInfoOnCustomer.xaml
     /// </summary>
-    public partial class AddNewCarDetails : Window
+    public partial class DisplaySalesInfoOnCustomer : UserControl
     {
-        public AddNewCarDetails()
+        public DisplaySalesInfoOnCustomer()
         {
             InitializeComponent();
         }

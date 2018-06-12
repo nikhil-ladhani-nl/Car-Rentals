@@ -13,10 +13,10 @@ namespace DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CarEntities : DbContext
+    public partial class NBEntities : DbContext
     {
-        public CarEntities()
-            : base("name=CarEntities")
+        public NBEntities()
+            : base("name=NBEntities")
         {
         }
     

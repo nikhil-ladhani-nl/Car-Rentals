@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DAD_Assignment
+namespace DAD_Assignment.Profile_Management
 {
     /// <summary>
-    /// Interaction logic for LoginPage.xaml
+    /// Interaction logic for DisplayListOfCarsforSale.xaml
     /// </summary>
-    public partial class LoginPage : UserControl
+    public partial class DisplayListOfCarsforSale : UserControl
     {
-        public LoginPage()
+        public DisplayListOfCarsforSale()
         {
             InitializeComponent();
         }

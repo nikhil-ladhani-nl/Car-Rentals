@@ -7,26 +7,33 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="816">
     <StackPanel>
+        
         <Menu Name="mainMenu" FontSize="20" Background="BlanchedAlmond" Height="58">
             <MenuItem Name="CREmployee" Header="Profile Management">
                 <MenuItem Header="Add New Employee" />
-                <MenuItem Header="Display Customer"/>
-                <MenuItem Header="Manage Profile">
+                <MenuItem Header="Display Car Sales to Customer"/>
+                <MenuItem Header="Search and Update Profile">
                     <MenuItem Header="Customer"/>
                     <MenuItem Header="Employee"/>
                 </MenuItem>
             </MenuItem>
             <MenuItem Name="CRStock" Header="Stock Management">
                 <MenuItem Header="Manage Cars">
-                    <MenuItem Name="SACItem"
-                        Header="Show All Cars"/>
-
-                    <MenuItem Name="ACItem" Header="Add Car"/>
-                    <MenuItem  Header="Search Car"/>
-                    <MenuItem Name="UPCItem" Header="Update Car Details"/>
+                    <MenuItem Name="SACDetails" Header="Show All Cars"/>
+                    <MenuItem Name="CFSDetails" Header="Display Cars for Sale"/>
+                    <MenuItem Name="ACDetails" Header="Add New Car Details"/>
+                    <MenuItem Name="SUPCDetails" Header="Search and Update Car Details"/>
                 </MenuItem>
             </MenuItem >
-            <MenuItem x:Name="Login" Header="Login" />
+            <MenuItem Header="Sales Management">
+                <MenuItem Header="Sale Car To New Customer">
+
+                </MenuItem>
+                <MenuItem Header="Sale Car To Existing Customer">
+
+                </MenuItem>
+            </MenuItem>
         </Menu>
+        <Label Content="Welcome to NBA Car Sales Limited" FontSize="40" HorizontalAlignment="Center"/>
     </StackPanel>
 </Window>

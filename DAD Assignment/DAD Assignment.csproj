@@ -56,6 +56,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sales Management\SaleCarToExistingCustomer.xaml.cs">
+      <DependentUpon>SaleCarToExistingCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sales Management\SaleCarToNewCustomer.xaml.cs">
+      <DependentUpon>SaleCarToNewCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Profile Management\AddDetailsofNewEmployee.xaml.cs">
+      <DependentUpon>AddDetailsofNewEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Profile Management\DisplaySalesInfoOnCustomer.xaml.cs">
+      <DependentUpon>DisplaySalesInfoOnCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Profile Management\SearchCustomerByID.xaml.cs">
+      <DependentUpon>SearchCustomerByID.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Profile Management\SearchEmployeeByID.xaml.cs">
+      <DependentUpon>SearchEmployeeByID.xaml</DependentUpon>
+    </Compile>
+    <Page Include="LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -68,8 +93,60 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Stock Management\AddNewCarInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stock Management\DisplayCarDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stock Management\DisplayListOfCarsforSale.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stock Management\SearchAndUpdateCarDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sales Management\SaleCarToExistingCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sales Management\SaleCarToNewCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Profile Management\AddDetailsofNewEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Profile Management\DisplaySalesInfoOnCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Profile Management\SearchCustomerByID.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Profile Management\SearchEmployeeByID.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Stock Management\AddNewCarInfo.xaml.cs">
+      <DependentUpon>AddNewCarInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stock Management\DisplayCarDetails.xaml.cs">
+      <DependentUpon>DisplayCarDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stock Management\DisplayListOfCarsforSale.xaml.cs">
+      <DependentUpon>DisplayListOfCarsforSale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stock Management\SearchAndUpdateCarDetails.xaml.cs">
+      <DependentUpon>SearchAndUpdateCarDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -87,6 +164,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\DAL.CarFeature.datasource" />
+    <None Include="Properties\DataSources\DAL.CarModel.datasource" />
+    <None Include="Properties\DataSources\DAL.Cars_Sold.datasource" />
+    <None Include="Properties\DataSources\DAL.Customer.datasource" />
+    <None Include="Properties\DataSources\DAL.Employee.datasource" />
+    <None Include="Properties\DataSources\DAL.IndividualCar.datasource" />
+    <None Include="Properties\DataSources\DAL.Person.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -101,5 +185,6 @@
       <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

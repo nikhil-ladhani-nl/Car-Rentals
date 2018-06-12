@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DAD_Assignment
+namespace DAD_Assignment.Stock_Management
 {
     /// <summary>
-    /// Interaction logic for DisplayListofCarsforSale.xaml
+    /// Interaction logic for SearchEmployeeByID.xaml
     /// </summary>
-    public partial class DisplayListofCarsforSale : Window
+    public partial class SearchEmployeeByID : UserControl
     {
-        public DisplayListofCarsforSale()
+        public SearchEmployeeByID()
         {
             InitializeComponent();
         }

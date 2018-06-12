@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DAD_Assignment
+namespace DAD_Assignment.Profile_Management
 {
     /// <summary>
-    /// Interaction logic for LoginPage.xaml
+    /// Interaction logic for SearchAndUpdateCarDetails.xaml
     /// </summary>
-    public partial class LoginPage : UserControl
+    public partial class SearchAndUpdateCarDetails : UserControl
     {
-        public LoginPage()
+        public SearchAndUpdateCarDetails()
         {
             InitializeComponent();
         }

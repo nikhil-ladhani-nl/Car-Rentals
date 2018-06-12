@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DAD_Assignment
+namespace DAD_Assignment.Stock_Management
 {
     /// <summary>
-    /// Interaction logic for LoginPage.xaml
+    /// Interaction logic for SearchCustomerByID.xaml
     /// </summary>
-    public partial class LoginPage : UserControl
+    public partial class SearchCustomerByID : UserControl
     {
-        public LoginPage()
+        public SearchCustomerByID()
         {
             InitializeComponent();
         }

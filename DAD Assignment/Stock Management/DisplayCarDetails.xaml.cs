@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DAD_Assignment
+namespace DAD_Assignment.Profile_Management
 {
     /// <summary>
-    /// Interaction logic for SearchAndUpdateCarDetails.xaml
+    /// Interaction logic for DisplayCarDetails.xaml
     /// </summary>
-    public partial class SearchAndUpdateCarDetails : Window
+    public partial class DisplayCarDetails : UserControl
     {
-        public SearchAndUpdateCarDetails()
+        public DisplayCarDetails()
         {
             InitializeComponent();
         }
