@@ -24,5 +24,10 @@ namespace DAD_Assignment.Stock_Management
         {
             InitializeComponent();
         }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
