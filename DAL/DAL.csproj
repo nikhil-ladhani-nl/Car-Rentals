@@ -78,6 +78,7 @@
     <Compile Include="Customer.cs">
       <DependentUpon>CarSalesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataStore.cs" />
     <Compile Include="Employee.cs">
       <DependentUpon>CarSalesModel.tt</DependentUpon>
     </Compile>
