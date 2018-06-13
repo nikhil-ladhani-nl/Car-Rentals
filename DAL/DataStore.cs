@@ -9,7 +9,6 @@ namespace DAL
    public class DataStore
     {
         static public Employee login = null;
-
         static public void addNewCarDetails(CarFeature cf, CarModel cm, IndividualCar ic)
         {
             using (NBAEntities ctx = new NBAEntities())

@@ -103,7 +103,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="StockManagement\DisplayCarDetails.xaml">
+    <Page Include="StockManagement\DisplaySelectedCarModel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -142,8 +142,8 @@
     <Compile Include="StockManagement\AddNewCarInfo.xaml.cs">
       <DependentUpon>AddNewCarInfo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="StockManagement\DisplayCarDetails.xaml.cs">
-      <DependentUpon>DisplayCarDetails.xaml</DependentUpon>
+    <Compile Include="StockManagement\DisplaySelectedCarModel.xaml.cs">
+      <DependentUpon>DisplaySelectedCarModel.xaml</DependentUpon>
     </Compile>
     <Compile Include="StockManagement\DisplayListOfCarsforSale.xaml.cs">
       <DependentUpon>DisplayListOfCarsforSale.xaml</DependentUpon>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DAL;
 
 namespace DAD_Assignment.Profile_Management
 {
@@ -25,9 +26,29 @@ namespace DAD_Assignment.Profile_Management
             InitializeComponent();
         }
 
+        System.Windows.Data.CollectionViewSource myCollectionViewSource;
+        NBAEntities ctx = new NBAEntities();
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
 
+            // Do not load your data at design time.
+            // if (!System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
+            // {
+            // 	//Load your data here and assign the result to the CollectionViewSource.
+           myCollectionViewSource = (System.Windows.Data.CollectionViewSource)this.Resources["Resource Key for CollectionViewSource"];
+            // 	myCollectionViewSource.Source = your data
+            // }
+        }
+
+        private void searchButton_Click(object sender, RoutedEventArgs e)
+        {
+            int modelid = int.Parse(modelTextBox.Text);
+            myCollectionViewSource.Source = ctx.CarModels.Where(cm => cm.ModelID == modelid).ToList();
+        }
+
+        private void updateButton_Click(object sender, RoutedEventArgs e)
+        {
+            ctx.SaveChanges();
         }
     }
 }

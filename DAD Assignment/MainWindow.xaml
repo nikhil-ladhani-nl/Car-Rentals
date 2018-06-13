@@ -5,24 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DAD_Assignment"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="816">
-    <StackPanel>
-        
-        <Menu Name="mainMenu" FontSize="20" Background="BlanchedAlmond" Height="58">
-            <MenuItem Name="CREmployee" Header="Profile Management">
-                <MenuItem Header="Add New Employee" />
-                <MenuItem Header="Display Car Sales to Customer"/>
+        Title="MainWindow" Height="593" Width="933">
+    <StackPanel Margin="0,0,0,-5">
+
+        <Menu Padding="10" Name="mainMenu" FontSize="20" Background="BlanchedAlmond" Height="58">
+            <MenuItem Header="Profile Management">
+                <MenuItem x:Name="ANEmployee" Header="Add New Employee" />
+                <MenuItem x:Name="DSalesCustomers" Header="Display Car Sales to Customer"/>
                 <MenuItem Header="Search and Update Profile">
-                    <MenuItem Header="Customer"/>
-                    <MenuItem Header="Employee"/>
+                    <MenuItem x:Name="SUGeneral" Header="General"/>
+                    <MenuItem x:Name="SUEmployee" Header="Employee"/>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Name="CRStock" Header="Stock Management">
+            <MenuItem Header="Stock Management" >
                 <MenuItem Header="Manage Cars">
-                    <MenuItem Name="SACDetails" Header="Show All Cars"/>
-                    <MenuItem Name="CFSDetails" Header="Display Cars for Sale"/>
-                    <MenuItem Name="ACDetails" Header="Add New Car Details"/>
-                    <MenuItem Name="SUPCDetails" Header="Search and Update Car Details"/>
+                    <MenuItem Name="CFSale" Header="Display Cars for Sale" Click="CFSDetails_Click"/>
+                    <MenuItem Name="CModel" Header="Show Cars by Selected Model" Click="SACDetails_Click"/>
+                    <MenuItem Name="ANewCar" Header="Add New Car Details" Click="ACDetails_Click"/>
+                    <MenuItem Name="UpdateCar" Header="Search and Update Car Details" Click="SUPCDetails_Click"/>
                 </MenuItem>
             </MenuItem >
             <MenuItem Header="Sales Management">
@@ -34,6 +34,8 @@
                 </MenuItem>
             </MenuItem>
         </Menu>
-        <Label Content="Welcome to NBA Car Sales Limited" FontSize="40" HorizontalAlignment="Center"/>
+        <Label Content="Welcome to NBA Car Sales Limited" FontSize="30" HorizontalAlignment="Center"/>
+        <StackPanel x:Name="carsalesPanel"  Height="400"/>
+        <Button x:Name="logoutButton" FontSize="20" Content="LogOut" Width="150" Click="logoutButton_Click" />
     </StackPanel>
 </Window>
