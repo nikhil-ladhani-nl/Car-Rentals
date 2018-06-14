@@ -1,12 +1,31 @@
-﻿<UserControl x:Class="DAD_Assignment.Stock_Management.SearchEmployeeByID"
+﻿<UserControl
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DAD_Assignment.Stock_Management"
+             xmlns:DAL="clr-namespace:DAL;assembly=DAL" x:Class="DAD_Assignment.Stock_Management.SearchEmployeeByID"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <CollectionViewSource x:Key="employeeViewSource" d:DesignSource="{d:DesignInstance {x:Type DAL:Employee}, CreateList=True}"/>
+    </UserControl.Resources>
+    <Grid Background="White" DataContext="{StaticResource employeeViewSource}">
+
+        <DataGrid x:Name="employeeDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="168,155,160,189" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="employeeIDColumn" Width="SizeToHeader" Header="Employee ID" Binding="{Binding EmployeeID}"/>
+                <DataGridTextColumn x:Name="office_AddressColumn" Width="SizeToHeader" Header="Office Address" Binding="{Binding Office_Address}"/>
+                <DataGridTextColumn x:Name="passwordColumn" Width="SizeToHeader" Header="Password" Binding="{Binding Password}"/>
+                <DataGridTextColumn x:Name="phone_Extension_NumberColumn" Width="SizeToHeader" Header="Phone Extension Number" Binding="{Binding Phone_Extension_Number}"/>
+                <DataGridTextColumn x:Name="roleColumn" Width="SizeToHeader" Header="Role" Binding="{Binding Role}"/>
+                <DataGridTextColumn x:Name="usernameColumn" Width="SizeToHeader" Header="Username" Binding="{Binding Username}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Enter Employee ID" HorizontalAlignment="Left" Margin="29,47,0,0" VerticalAlignment="Top" Width="116"/>
+        <TextBox Name="txtEID" HorizontalAlignment="Left" Height="23" Margin="168,50,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="403"/>
+        <Button Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="640,47,0,0" VerticalAlignment="Top" Width="89" Height="26" Click="btnSearch_Click"/>
+        <Button Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="331,300,0,0" VerticalAlignment="Top" Width="75" Click="btnUpdate_Click"/>
+
     </Grid>
 </UserControl>

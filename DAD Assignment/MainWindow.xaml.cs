@@ -26,11 +26,11 @@ namespace DAD_Assignment
         public MainWindow()
         {
             InitializeComponent();
-            string role = DataStore.login.Role;
-            switch (role)
-            {
-                case "Staff": mainMenu.Items.Remove();
-            }
+            //string role = DataStore.login.Role;
+            //switch (role)
+            //{
+            //    case "Staff": mainMenu.Items.Remove();
+            //}
         }
 
         private void ACDetails_Click(object sender, RoutedEventArgs e)

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DAL;
 
 namespace DAD_Assignment.Stock_Management
 {
@@ -20,9 +21,33 @@ namespace DAD_Assignment.Stock_Management
     /// </summary>
     public partial class SearchEmployeeByID : UserControl
     {
+        
         public SearchEmployeeByID()
         {
             InitializeComponent();
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+
+
+            // Do not load your data at design time.
+            // if (!System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
+            // {
+            // 	//Load your data here and assign the result to the CollectionViewSource.
+            //System.Windows.Data.CollectionViewSource myCollectionViewSource = (System.Windows.Data.CollectionViewSource)this.Resources["myCollectionViewSource"];
+            // 	myCollectionViewSource.Source = your data
+            // }
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
