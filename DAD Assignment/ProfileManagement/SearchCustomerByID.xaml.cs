@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DAL;
 
 namespace DAD_Assignment.Stock_Management
 {
@@ -20,6 +21,7 @@ namespace DAD_Assignment.Stock_Management
     /// </summary>
     public partial class SearchCustomerByID : UserControl
     {
+        NBAEntities ctx = new NBAEntities();
         public SearchCustomerByID()
         {
             InitializeComponent();
@@ -27,7 +29,19 @@ namespace DAD_Assignment.Stock_Management
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
+            System.Windows.Data.CollectionViewSource myCollectionViewSource = (System.Windows.Data.CollectionViewSource)this.Resources["myCollectionViewSource"];
+        }
 
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            int id = int.Parse(txtCID.Text);
+
+            personDataGrid.ItemsSource = ctx.People.Where(p => p.PersonID == id).ToList();
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            ctx.SaveChanges();
         }
     }
 }
