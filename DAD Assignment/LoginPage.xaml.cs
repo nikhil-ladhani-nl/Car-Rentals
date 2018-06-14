@@ -10,19 +10,37 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DAL;
 
 namespace DAD_Assignment
 {
     /// <summary>
     /// Interaction logic for LoginPage.xaml
     /// </summary>
-    public partial class LoginPage : UserControl
+    public partial class LoginPage : Window
     {
         public LoginPage()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string un = usernameTextBox.Text;
+            string pwd = passwordTextBox.Password;
+
+            Employee data = DataStore.getLoginDetail(un, pwd);
+            if (data == null)
+            {
+                MessageBox.Show("Please enter correct login details");
+            }
+            else
+            {
+                MainWindow form = new MainWindow();
+                form.Show();
+                this.Hide();
+            }
         }
     }
 }

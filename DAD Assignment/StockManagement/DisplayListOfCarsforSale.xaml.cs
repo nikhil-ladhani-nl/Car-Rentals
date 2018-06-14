@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DAL;
 
 namespace DAD_Assignment.Profile_Management
 {
@@ -23,6 +24,8 @@ namespace DAD_Assignment.Profile_Management
         public DisplayListOfCarsforSale()
         {
             InitializeComponent();
+
+            NBAEntities ctx = new NBAEntities();
         }
     }
 }
