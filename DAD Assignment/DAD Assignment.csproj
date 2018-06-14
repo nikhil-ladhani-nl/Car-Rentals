@@ -66,6 +66,9 @@
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProfileManagement\ViewPersonByID.xaml.cs">
+      <DependentUpon>ViewPersonByID.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SalesManagement\SaleCarToExistingCustomer.xaml.cs">
       <DependentUpon>SaleCarToExistingCustomer.xaml</DependentUpon>
     </Compile>
@@ -100,6 +103,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ProfileManagement\ViewPersonByID.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StockManagement\AddNewCarInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

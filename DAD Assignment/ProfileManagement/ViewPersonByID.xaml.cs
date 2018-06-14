@@ -14,16 +14,15 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DAL;
 
-namespace DAD_Assignment.Stock_Management
+namespace DAD_Assignment.ProfileManagement
 {
     /// <summary>
-    /// Interaction logic for SearchEmployeeByID.xaml
+    /// Interaction logic for ViewPersonByID.xaml
     /// </summary>
-    public partial class SearchEmployeeByID : UserControl
+    public partial class ViewPersonByID : UserControl
     {
         NBAEntities ctx = new NBAEntities();
-        
-        public SearchEmployeeByID()
+        public ViewPersonByID()
         {
             InitializeComponent();
         }
@@ -31,26 +30,20 @@ namespace DAD_Assignment.Stock_Management
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
 
-
             // Do not load your data at design time.
             // if (!System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
             // {
             // 	//Load your data here and assign the result to the CollectionViewSource.
-            System.Windows.Data.CollectionViewSource myCollectionViewSource = (System.Windows.Data.CollectionViewSource)this.Resources["myCollectionViewSource"];
+            System.Windows.Data.CollectionViewSource myCollectionViewSource = (System.Windows.Data.CollectionViewSource)this.Resources["Resource Key for CollectionViewSource"];
             // 	myCollectionViewSource.Source = your data
             // }
         }
 
-        private void btnUpdate_Click(object sender, RoutedEventArgs e)
-        {
-            ctx.SaveChanges();
-        }
-
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            int id = int.Parse(txtEID.Text);
+            int id = int.Parse(txtPID.Text);
 
-            employeeDataGrid.ItemsSource = ctx.Employees.Where(em => em.EmployeeID == id).ToList();
+            personDataGrid.ItemsSource = ctx.People.Where(p => p.PersonID == id).ToList();
         }
     }
 }

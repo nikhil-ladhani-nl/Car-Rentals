@@ -36,7 +36,7 @@ namespace DAD_Assignment.Stock_Management
         {
             int id = int.Parse(txtCID.Text);
 
-            personDataGrid.ItemsSource = ctx.People.Where(p => p.PersonID == id).ToList();
+            customerDataGrid.ItemsSource = ctx.Customers.Where(c => c.CustomerID == id).ToList();
         }
 
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
