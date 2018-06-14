@@ -26,6 +26,9 @@ namespace DAD_Assignment.Profile_Management
             InitializeComponent();
 
             NBAEntities ctx = new NBAEntities();
+
+            carsforSaleDG.ItemsSource = ctx.Database.SqlQuery<IndividualCar>("select ic.Sale_Price, ic.Customer_Id, cf.Car_feature_Description as CarForSale from Cars_Sold ic inner join FeaturesOnCars fc on ic.Car_For_Sale_Id = fc.Car_For_Sale_ID inner join CarFeature cf on cf.FeatureID = fc.Car_Feature_ID where ic.Sale_Price = 'Available'").ToList();
+
         }
     }
 }
