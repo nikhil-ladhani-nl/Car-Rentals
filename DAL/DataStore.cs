@@ -27,5 +27,14 @@ namespace DAL
             }
             return login;
         }
+        static public void addEmployee(Employee emp)
+        {
+            using (NBAEntities ctx = new NBAEntities())
+            {
+                emp.EmployeeID = login.EmployeeID;
+                ctx.Employees.Add(emp);
+                ctx.SaveChanges();
+            }
+        }
     }
 }
