@@ -28,7 +28,7 @@ namespace DAD_Assignment.Profile_Management
 
             NBAEntities ctx = new NBAEntities();
 
-            carsforSaleDG.ItemsSource = ctx.Database.SqlQuery<DisplayCarsForSale>("SELECT CarModel.Model, CarModel.Manufacturer, CarModel.NumberOfSeats, CarModel.EngineSize, IndividualCar.Colour, IndividualCar.Current_Mileage, IndividualCar.Date_Imported, IndividualCar.Status, IndividualCar.Body_Type, CarFeature.Car_Feature_Description FROM CarFeature INNER JOIN FeaturesOnCars ON CarFeature.FeatureID = FeaturesOnCars.Car_Feature_ID INNER JOIN IndividualCar ON FeaturesOnCars.Car_For_Sale_ID = IndividualCar.CarID INNER JOIN CarModel ON IndividualCar.Model_ID = CarModel.ModelID WHERE IndividualCar.Status ='Available'").ToList();
+            //carsforSaleDG.ItemsSource = ctx.Database.SqlQuery<DisplayCarsForSale>("SELECT CarModel.Model, CarModel.Manufacturer, CarModel.NumberOfSeats, CarModel.EngineSize, IndividualCar.Colour, IndividualCar.Current_Mileage, IndividualCar.Date_Imported, IndividualCar.Status, IndividualCar.Body_Type, CarFeature.Car_Feature_Description FROM CarFeature INNER JOIN FeaturesOnCars ON CarFeature.FeatureID = FeaturesOnCars.Car_Feature_ID INNER JOIN IndividualCar ON FeaturesOnCars.Car_For_Sale_ID = IndividualCar.CarID INNER JOIN CarModel ON IndividualCar.Model_ID = CarModel.ModelID WHERE IndividualCar.Status ='Available'").ToList();
 
         }
     }

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DAD_Assignment.Profile_Management;
 using DAD_Assignment.Stock_Management;
+using DAD_Assignment.ProfileManagement;
 using DAL;
 
 namespace DAD_Assignment
@@ -92,6 +93,18 @@ namespace DAD_Assignment
         {
             carsalesPanel.Children.Clear();
             carsalesPanel.Children.Add(new ViewPersonByID());
+        }
+
+        private void StaffVPersonID_Click(object sender, RoutedEventArgs e)
+        {
+            carsalesPanel.Children.Clear();
+            carsalesPanel.Children.Add(new ViewPersonByID());
+        }
+
+        private void StaffSUCustomer_Click(object sender, RoutedEventArgs e)
+        {
+            carsalesPanel.Children.Clear();
+            carsalesPanel.Children.Add(new SearchCustomerByID());
         }
     }
 }

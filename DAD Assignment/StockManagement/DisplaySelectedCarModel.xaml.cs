@@ -26,7 +26,7 @@ namespace DAD_Assignment.Profile_Management
         {
             InitializeComponent();
 
-            displaySelectedModelGrid.ItemsSource = ctx.Database.SqlQuery<DisplaySelectedCarModel>("SELECT CarModel.Model, IndividualCar.Colour, IndividualCar.Current_Mileage, IndividualCar.Status, IndividualCar.Body_Type, CarFeature.Car_Feature_Description FROM CarFeature INNER JOIN FeaturesOnCars ON CarFeature.FeatureID = FeaturesOnCars.Car_Feature_ID INNER JOIN IndividualCar ON FeaturesOnCars.Car_For_Sale_ID = IndividualCar.CarID INNER JOIN CarModel ON IndividualCar.Model_ID = CarModel.ModelID WHERE CarModel.Model = 'CarModel.Model'").ToList();
+            //displaySelectedModelGrid.ItemsSource = ctx.Database.SqlQuery<DisplaySelectedCarModel>("SELECT CarModel.Model, IndividualCar.Colour, IndividualCar.Current_Mileage, IndividualCar.Status, IndividualCar.Body_Type, CarFeature.Car_Feature_Description FROM CarFeature INNER JOIN FeaturesOnCars ON CarFeature.FeatureID = FeaturesOnCars.Car_Feature_ID INNER JOIN IndividualCar ON FeaturesOnCars.Car_For_Sale_ID = IndividualCar.CarID INNER JOIN CarModel ON IndividualCar.Model_ID = CarModel.ModelID WHERE CarModel.Model = 'CarModel.Model'").ToList();
         }
 
         NBAEntities ctx = new NBAEntities();

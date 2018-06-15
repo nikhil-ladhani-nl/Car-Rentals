@@ -31,8 +31,9 @@
             <MenuItem x:Name="MStaff" Header="Staff">
                 <MenuItem Header="Profile Management">
                     <MenuItem x:Name="DSaleCustomers" Header="Display Car Sales to Customer"/>
+                    <MenuItem x:Name="StaffVPersonID" Header="View Person by ID" Click="StaffVPersonID_Click"></MenuItem>
                     <MenuItem Header="Search and Update Profile">
-                        <MenuItem x:Name="UGeneral" Header="General"/>
+                        <MenuItem x:Name="StaffSUCustomer" Header="Customer" Click="StaffSUCustomer_Click"/>
                     </MenuItem>
                 </MenuItem>
                 <MenuItem Header="Stock Management" >
