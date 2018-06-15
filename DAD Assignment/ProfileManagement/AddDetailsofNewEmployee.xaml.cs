@@ -45,30 +45,24 @@ namespace DAD_Assignment.Stock_Management
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            string output = Validation.validEmptyFields(grid1);
+            string output = Validation.ValidEmptyFields(grid1);
             if (output != null)
             {
                 MessageBox.Show(output);
             }
-            else
-            {
-                int employeeID;
-                if (int.TryParse(employeeIDTextBox.Text, out employeeID))
-                {
 
-                }
-                else
-                {
-                    MessageBox.Show("Please enter employee ID as number not text");
-                }
-            }
+            Person psn = new Person();
+            psn.Address = addressTextBox.Text;
+            psn.Name = nameTextBox.Text;
+            psn.Telephone = telephoneTextBox.Text;
+
             Employee emp = new Employee();
             emp.Office_Address = office_AddressTextBox.Text;
             emp.Password = passwordTextBox.Text;
             emp.Phone_Extension_Number = phone_Extension_NumberTextBox.Text;
             emp.Role = roleTextBox.Text;
             emp.Username = usernameTextBox.Text;
-            DataStore.addEmployee(emp);
+            DataStore.addEmployee(emp, psn);
             MessageBox.Show("Employee added successfully");
         }
     }

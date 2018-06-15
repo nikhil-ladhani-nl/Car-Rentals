@@ -33,12 +33,13 @@ namespace DAL
         }
 
         //add new car info by Brodie Allen
-        static public void addEmployee(Employee emp)
+        static public void addEmployee(Employee emp, Person psn)
         {
             using (NBAEntities ctx = new NBAEntities())
             {
                 //emp.EmployeeID = login.EmployeeID;
                 ctx.Employees.Add(emp);
+                ctx.People.Add(psn);
                 ctx.SaveChanges();
             }
         }

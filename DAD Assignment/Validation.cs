@@ -11,7 +11,7 @@ namespace DAD_Assignment
 {
     class Validation
     {
-        static public string validEmptyFields(Grid data)
+        static public string ValidEmptyFields(Grid data)
         {
             string message = null;
             foreach (Control ctl in data.Children)
