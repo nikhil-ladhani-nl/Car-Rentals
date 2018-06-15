@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="NB_DADModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="NB_DADModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CarFeature">
           <Key>
             <PropertyRef Name="FeatureID" />
@@ -59,12 +59,13 @@
           </Key>
           <Property Name="Car_For_Sale_ID" Type="int" Nullable="false" />
           <Property Name="Car_Feature_ID" Type="int" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="IndividualCar">
           <Key>
             <PropertyRef Name="CarID" />
           </Key>
-          <Property Name="CarID" Type="int" Nullable="false" />
+          <Property Name="CarID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Colour" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Current_Mileage" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Date_Imported" Type="nchar" MaxLength="10" Nullable="false" />
@@ -205,8 +206,7 @@
             <End Role="IndividualCar" EntitySet="IndividualCar" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NB_DADModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
