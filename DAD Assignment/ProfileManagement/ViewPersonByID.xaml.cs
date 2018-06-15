@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DAL;
 
-namespace DAD_Assignment.ProfileManagement
+namespace DAD_Assignment.Stock_Management
 {
     /// <summary>
     /// Interaction logic for ViewPersonByID.xaml
