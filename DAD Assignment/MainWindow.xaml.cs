@@ -26,11 +26,11 @@ namespace DAD_Assignment
         public MainWindow()
         {
             InitializeComponent();
-            //string role = DataStore.login.Role;
-            //switch (role)
-            //{
-            //    case "Staff": mainMenu.Items.Remove();
-            //}
+            string role = DataStore.login.Role;
+            switch (role)
+            {
+                case "Staff": mainMenu.Items.Remove(MAdmin);break;
+            }
         }
 
         private void ACDetails_Click(object sender, RoutedEventArgs e)
@@ -63,5 +63,12 @@ namespace DAD_Assignment
             LoginPage login = new LoginPage();
             login.Show();
         }
+
+        private void ANEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            carsalesPanel.Children.Clear();
+            carsalesPanel.Children.Add(new AddDetailsofNewEmployee());
+        }
+
     }
 }

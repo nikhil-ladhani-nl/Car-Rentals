@@ -27,7 +27,7 @@ namespace DAD_Assignment.Profile_Management
 
             NBAEntities ctx = new NBAEntities();
 
-            carsforSaleDG.ItemsSource = ctx.Database.SqlQuery<IndividualCar>("select ic.Sale_Price, ic.Customer_Id, cf.Car_feature_Description as CarForSale from Cars_Sold ic inner join FeaturesOnCars fc on ic.Car_For_Sale_Id = fc.Car_For_Sale_ID inner join CarFeature cf on cf.FeatureID = fc.Car_Feature_ID where ic.Sale_Price = 'Available'").ToList();
+            carsforSaleDG.ItemsSource = ctx.Database.SqlQuery<DisplayCarsForSale>("SELECT CarModel.Model, CarModel.Manufacturer, CarModel.NumberOfSeats, CarModel.EngineSize, IndividualCar.Colour, IndividualCar.Current_Mileage, IndividualCar.Date_Imported, IndividualCar.Status, IndividualCar.Body_Type, CarFeature.Car_Feature_Description FROM CarFeature INNER JOIN FeaturesOnCars ON CarFeature.FeatureID = FeaturesOnCars.Car_Feature_ID INNER JOIN IndividualCar ON FeaturesOnCars.Car_For_Sale_ID = IndividualCar.CarID INNER JOIN CarModel ON IndividualCar.Model_ID = CarModel.ModelID WHERE IndividualCar.Status ='Available'").ToList();
 
         }
     }

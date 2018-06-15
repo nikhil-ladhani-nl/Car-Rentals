@@ -60,6 +60,24 @@ namespace DAD_Assignment.Profile_Management
             
             DataStore.addNewCarDetails(cf,cm,ic);
             MessageBox.Show("Car added successfully");
+
+            string output = DataStore.validEmptyFields(addNewCarGrid);
+            if (output != null)
+            {
+                MessageBox.Show(output);
+            }
+            else
+            {
+                int man_year;
+                if (int.TryParse(modelTextBox.Text, out man_year))
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("Please enter year as number not text");
+                }
+            }
         }
     }
 }

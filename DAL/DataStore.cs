@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace DAL
 {
@@ -27,6 +28,23 @@ namespace DAL
             }
             return login;
         }
+        static public string validEmptyFields(Grid data)
+        {
+            string message = null;
+            foreach (Control ctl in data.Children)
+            {
+                if (ctl.GetType() == typeof(TextBox))
+                {
+                    TextBox tb = (TextBox)ctl;
+                    if (tb.Text.Length == 0)
+                    {
+                        message = message + "Please enter value for " + tb.Uid + "\n";
+                    }
+                }
+            }
+            return message;
+        }
+
         static public void addEmployee(Employee emp)
         {
             using (NBAEntities ctx = new NBAEntities())

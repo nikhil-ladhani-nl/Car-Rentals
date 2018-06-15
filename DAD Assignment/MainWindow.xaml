@@ -9,29 +9,37 @@
     <StackPanel Margin="0,0,0,-5">
 
         <Menu Padding="10" Name="mainMenu" FontSize="20" Background="BlanchedAlmond" Height="58">
+            <MenuItem x:Name="MAdmin" Header="Admin">
             <MenuItem Header="Profile Management">
-                <MenuItem x:Name="ANEmployee" Header="Add New Employee" />
-                <MenuItem x:Name="DSalesCustomers" Header="Display Car Sales to Customer"/>
+                <MenuItem x:Name="ANEmployee" Header="Add New Employee" Click="ANEmployee_Click" />
+                <MenuItem x:Name="DSalesCustomers" Header="Display Car Sales to Customer" Click="DSalesCustomers_Click"/>
                 <MenuItem Header="Search and Update Profile">
                     <MenuItem x:Name="SUGeneral" Header="General"/>
                     <MenuItem x:Name="SUEmployee" Header="Employee"/>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="Stock Management" >
-                <MenuItem Header="Manage Cars">
-                    <MenuItem Name="CFSale" Header="Display Cars for Sale" Click="CFSDetails_Click"/>
-                    <MenuItem Name="CModel" Header="Show Cars by Selected Model" Click="SACDetails_Click"/>
-                    <MenuItem Name="ANewCar" Header="Add New Car Details" Click="ACDetails_Click"/>
-                    <MenuItem Name="UpdateCar" Header="Search and Update Car Details" Click="SUPCDetails_Click"/>
+                <MenuItem Header="Stock Management" >
+                    <MenuItem Header="Manage Cars">
+                        <MenuItem Name="CFSale" Header="Display Cars for Sale" Click="CFSDetails_Click"/>
+                        <MenuItem Name="CModel" Header="Show Cars by Selected Model" Click="SACDetails_Click"/>
+                        <MenuItem Name="ANewCar" Header="Add New Car Details" Click="ACDetails_Click"/>
+                        <MenuItem Name="UpdateCar" Header="Search and Update Car Details" Click="SUPCDetails_Click"/>
+                    </MenuItem>
+                </MenuItem >
+            </MenuItem>
+            <MenuItem x:Name="MStaff" Header="Staff">
+                <MenuItem Header="Profile Management">
+                    <MenuItem x:Name="DSaleCustomers" Header="Display Car Sales to Customer"/>
+                    <MenuItem Header="Search and Update Profile">
+                        <MenuItem x:Name="UGeneral" Header="General"/>
+                    </MenuItem>
                 </MenuItem>
-            </MenuItem >
-            <MenuItem Header="Sales Management">
-                <MenuItem Header="Sale Car To New Customer">
-
-                </MenuItem>
-                <MenuItem Header="Sale Car To Existing Customer">
-
-                </MenuItem>
+                <MenuItem Header="Stock Management" >
+                    <MenuItem Header="Manage Cars">
+                        <MenuItem Name="CSale" Header="Display Cars for Sale" Click="CFSDetails_Click"/>
+                        <MenuItem Name="CMModel" Header="Show Cars by Selected Model" Click="SACDetails_Click"/>
+                    </MenuItem>
+                </MenuItem >
             </MenuItem>
         </Menu>
         <Label Content="Welcome to NBA Car Sales Limited" FontSize="30" HorizontalAlignment="Center"/>

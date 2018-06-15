@@ -21,8 +21,18 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Label Content="Model:" Grid.Column="0" FontSize="20" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-            <ComboBox x:Name="modelComboBox" Grid.Column="1" FontSize="20" DisplayMemberPath="Model" HorizontalAlignment="Left" Height="Auto" ItemsSource="{Binding}" Margin="3" Grid.Row="0" VerticalAlignment="Center" Width="120">
+        </Grid>
+        <DataGrid x:Name="displaySelectedModelGrid" HorizontalAlignment="Left" Height="382" Margin="10,58,0,0" VerticalAlignment="Top" Width="780"/>
+        <Grid x:Name="grid2" HorizontalAlignment="Left" Margin="19,21,0,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="Model:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <ComboBox x:Name="modelComboBox" Grid.Column="1" DisplayMemberPath="Model" HorizontalAlignment="Left" Height="Auto" ItemsSource="{Binding}" Margin="3" Grid.Row="0" VerticalAlignment="Center" Width="120" SelectionChanged="modelComboBox_SelectionChanged">
                 <ComboBox.ItemsPanel>
                     <ItemsPanelTemplate>
                         <VirtualizingStackPanel/>
