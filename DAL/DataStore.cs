@@ -10,6 +10,8 @@ namespace DAL
    public class DataStore
     {
         static public Employee login = null;
+
+        //add new car info by Nikhil Ladhani
         static public void addNewCarDetails(CarFeature cf, CarModel cm, IndividualCar ic)
         {
             using (NBAEntities ctx = new NBAEntities())
@@ -20,6 +22,7 @@ namespace DAL
                 ctx.SaveChanges();
             }
         }
+        //login coded by Nikhil Ladhani
         static public Employee getLoginDetail(String un, String pwd)
         {
             using (NBAEntities ctx = new NBAEntities())
@@ -28,23 +31,8 @@ namespace DAL
             }
             return login;
         }
-        static public string validEmptyFields(Grid data)
-        {
-            string message = null;
-            foreach (Control ctl in data.Children)
-            {
-                if (ctl.GetType() == typeof(TextBox))
-                {
-                    TextBox tb = (TextBox)ctl;
-                    if (tb.Text.Length == 0)
-                    {
-                        message = message + "Please enter value for " + tb.Uid + "\n";
-                    }
-                }
-            }
-            return message;
-        }
 
+        //add new car info by Brodie Allen
         static public void addEmployee(Employee emp)
         {
             using (NBAEntities ctx = new NBAEntities())
