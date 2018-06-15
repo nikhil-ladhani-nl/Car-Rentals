@@ -63,8 +63,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DisplaySelectedCarModel.cs" />
-    <Compile Include="DisplayCarsForSale.cs" />
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -89,7 +87,7 @@
     <Compile Include="ProfileManagement\SearchEmployeeByID.xaml.cs">
       <DependentUpon>SearchEmployeeByID.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Utility.cs" />
+    <Compile Include="Validation.cs" />
     <Page Include="LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

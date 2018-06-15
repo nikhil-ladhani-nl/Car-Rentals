@@ -48,27 +48,13 @@ namespace DAD_Assignment.Stock_Management
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            //int id = int.Parse(txtEID.Text);
+            int id = int.Parse(txtEID.Text);
 
-            //employeeDataGrid.ItemsSource = ctx.Employees.Where(em => em.EmployeeID == id).ToList();
+            employeeDataGrid.ItemsSource = ctx.Employees.Where(em => em.EmployeeID == id).ToList();
 
-            string output = Utility.validEmptyFields(txtEID);
-            if (output != null)
-            {
-                MessageBox.Show(output);
-            }
-            else
-            {
-                int employeeID;
-                if (int.TryParse(txtEID.Text, out employeeID))
-                {
+           
 
-                }
-                else
-                {
-                    MessageBox.Show("Please enter ID as number not text");
-                }
-            }
+
         }
     }
 }
