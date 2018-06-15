@@ -24,5 +24,10 @@ namespace DAD_Assignment.Sales_Management
         {
             InitializeComponent();
         }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

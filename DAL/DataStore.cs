@@ -49,7 +49,7 @@ namespace DAL
         {
             using (NBAEntities ctx = new NBAEntities())
             {
-                emp.EmployeeID = login.EmployeeID;
+                //emp.EmployeeID = login.EmployeeID;
                 ctx.Employees.Add(emp);
                 ctx.SaveChanges();
             }

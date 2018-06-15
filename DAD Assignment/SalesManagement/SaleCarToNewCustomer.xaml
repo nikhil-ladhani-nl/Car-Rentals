@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:DAD_Assignment.Sales_Management"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <Grid Background="White">
+        
             
     </Grid>
 </UserControl>

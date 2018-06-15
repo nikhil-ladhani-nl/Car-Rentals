@@ -89,6 +89,7 @@
     <Compile Include="ProfileManagement\SearchEmployeeByID.xaml.cs">
       <DependentUpon>SearchEmployeeByID.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utility.cs" />
     <Page Include="LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
