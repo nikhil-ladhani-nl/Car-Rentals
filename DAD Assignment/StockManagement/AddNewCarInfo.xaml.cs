@@ -61,6 +61,15 @@ namespace DAD_Assignment.Profile_Management
             
             DataStore.addNewCarDetails(cf,cm,ic);
             MessageBox.Show("Car added successfully");
+            body_TypeTextBox.Clear(); colourTextBox.Clear();
+            current_MileageTextBox.Clear(); date_ImportedTextBox.Clear();
+            manufacturerTextBox.Clear(); manufacture_YearTextBox.Clear();
+            statusTextBox.Clear(); transmissionTextBox.Clear();
+            engineSizeTextBox.Clear(); modelTextBox.Clear();
+            numberOfSeatsTextBox.Clear();
+
+
+
 
         }
     }

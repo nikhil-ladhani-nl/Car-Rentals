@@ -13,7 +13,7 @@
     </UserControl.Resources>
     <Grid Background="White">
 
-        <Grid x:Name="grid1" VerticalAlignment="Top" Margin="226,176,0,0" HorizontalAlignment="Left" DataContext="{StaticResource employeeViewSource}" Height="206" Width="302">
+        <Grid x:Name="grid1" VerticalAlignment="Top" Margin="243,57,0,0" HorizontalAlignment="Left" DataContext="{StaticResource employeeViewSource}" Height="206" Width="302">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -39,7 +39,7 @@
             <Label VerticalAlignment="Center" Grid.Row="5" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Username:"/>
             <TextBox x:Name="usernameTextBox" Uid="Username" Width="120" VerticalAlignment="Center" Text="{Binding Username, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="5" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
         </Grid>
-        <Button Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="335,400,0,0" VerticalAlignment="Top" Width="75" Click="btnAdd_Click"/>
+        <Button Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="352,281,0,0" VerticalAlignment="Top" Width="75" Click="btnAdd_Click"/>
 
     </Grid>
 </UserControl>

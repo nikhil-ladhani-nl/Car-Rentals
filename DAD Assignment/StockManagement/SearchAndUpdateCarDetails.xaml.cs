@@ -43,12 +43,16 @@ namespace DAD_Assignment.Profile_Management
 
         private void searchButton_Click(object sender, RoutedEventArgs e)
         {
-            int modelid = int.Parse(modelTextBox.Text);
-            myCollectionViewSource.Source = ctx.CarModels.Where(cm => cm.ModelID == modelid).ToList();
+            string model = modelTextBox.Text;
+            individualCarDataGrid.ItemsSource = ctx.CarModels.Where(cm => cm.Model == model).ToList();
+            carModelDataGrid.ItemsSource = ctx.CarModels.Where(cm => cm.Model == model).ToList();
+            carFeatureDataGrid.ItemsSource = ctx.CarModels.Where(cm => cm.Model == model).ToList();
+
         }
 
         private void updateButton_Click(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("Car Details Updated Successfully");s
             ctx.SaveChanges();
         }
     }
