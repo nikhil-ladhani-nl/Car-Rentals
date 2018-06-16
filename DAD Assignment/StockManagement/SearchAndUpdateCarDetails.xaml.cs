@@ -25,6 +25,7 @@ namespace DAD_Assignment.Profile_Management
         public SearchAndUpdateCarDetails()
         {
             InitializeComponent();
+
         }
 
         System.Windows.Data.CollectionViewSource myCollectionViewSource;
@@ -44,15 +45,20 @@ namespace DAD_Assignment.Profile_Management
         private void searchButton_Click(object sender, RoutedEventArgs e)
         {
             string model = modelTextBox.Text;
-            individualCarDataGrid.ItemsSource = ctx.CarModels.Where(cm => cm.Model == model).ToList();
-            carModelDataGrid.ItemsSource = ctx.CarModels.Where(cm => cm.Model == model).ToList();
-            carFeatureDataGrid.ItemsSource = ctx.CarModels.Where(cm => cm.Model == model).ToList();
+            if (modelTextBox == null)
+            {
+                MessageBox.Show("Please enter correct Model Name");
+            }
+            else
+            {
+                modelDataGrid.ItemsSource = ctx.CarModels.Where(m => m.Model == model).ToList();
+            }
 
         }
 
         private void updateButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Car Details Updated Successfully");s
+            MessageBox.Show("Car Details Updated Successfully");
             ctx.SaveChanges();
         }
     }

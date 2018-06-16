@@ -18,26 +18,55 @@
         <TextBox x:Name="modelTextBox" HorizontalAlignment="Left" FontSize="20" Height="37" Margin="272,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="236"/>
         <Button x:Name="updateButton" Content="Update" HorizontalAlignment="Left" Margin="272,368,0,0" VerticalAlignment="Top" Width="150" Click="updateButton_Click"/>
         <Button x:Name="searchButton" FontSize="20" Content="Search" HorizontalAlignment="Left" Margin="564,112,0,0" VerticalAlignment="Top" Width="150" Click="searchButton_Click"/>
-        <DataGrid x:Name="individualCarDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="10,154,534,96" RowDetailsVisibilityMode="VisibleWhenSelected">
-            <DataGrid.Columns>
-                <DataGridTextColumn x:Name="body_TypeColumn" Binding="{Binding Body_Type}" Header="Body Type" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="colourColumn" Binding="{Binding Colour}" Header="Colour" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="current_MileageColumn" Binding="{Binding Current_Mileage}" Header="Current Mileage" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="statusColumn" Binding="{Binding Status}" Header="Status" Width="SizeToHeader"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <DataGrid x:Name="carFeatureDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource carFeatureViewSource}}" Margin="513,154,10,96" RowDetailsVisibilityMode="VisibleWhenSelected">
-            <DataGrid.Columns>
-                <DataGridTextColumn x:Name="car_Feature_DescriptionColumn" Binding="{Binding Car_Feature_Description}" Header="Car Feature Description" Width="SizeToHeader"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <DataGrid x:Name="carModelDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource carModelViewSource}}" Margin="266,154,287,96" RowDetailsVisibilityMode="VisibleWhenSelected">
-            <DataGrid.Columns>
-                <DataGridTextColumn x:Name="engineSizeColumn" Binding="{Binding EngineSize}" Header="Engine Size" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="modelColumn" Binding="{Binding Model}" Header="Model" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="numberOfSeatsColumn" Binding="{Binding NumberOfSeats}" Header="Number Of Seats" Width="SizeToHeader"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="10,154,0,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="Body Type:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="body_TypeTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding Body_Type, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Colour:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
+            <TextBox x:Name="colourTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding Colour, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Current Mileage:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
+            <TextBox x:Name="current_MileageTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="2" Text="{Binding Current_Mileage, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Status:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
+            <TextBox x:Name="statusTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="3" Text="{Binding Status, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        </Grid>
+        <Grid x:Name="grid2" DataContext="{StaticResource carModelViewSource}" HorizontalAlignment="Left" Margin="272,154,0,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="Engine Size:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="engineSizeTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding EngineSize, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Model:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
+            <TextBox x:Name="modelTextBox1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding Model, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Number Of Seats:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
+            <TextBox x:Name="numberOfSeatsTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="2" Text="{Binding NumberOfSeats, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        </Grid>
+        <Grid x:Name="grid3" DataContext="{StaticResource carFeatureViewSource}" HorizontalAlignment="Left" Margin="272,264,0,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="Car Feature Description:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="car_Feature_DescriptionTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding Car_Feature_Description, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        </Grid>
+        <DataGrid x:Name="modelDataGrid" HorizontalAlignment="Left" Height="100" Margin="523,154,0,0" VerticalAlignment="Top" Width="277"/>
 
     </Grid>
 </UserControl>
