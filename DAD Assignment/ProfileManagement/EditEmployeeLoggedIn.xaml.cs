@@ -14,16 +14,15 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DAL;
 
-namespace DAD_Assignment.Stock_Management
+namespace DAD_Assignment.ProfileManagement
 {
     /// <summary>
-    /// Interaction logic for SearchEmployeeByID.xaml
+    /// Interaction logic for EditEmployeeLoggedIn.xaml
     /// </summary>
-    public partial class SearchEmployeeByID : UserControl
+    public partial class EditEmployeeLoggedIn : UserControl
     {
         NBAEntities ctx = new NBAEntities();
-
-        public SearchEmployeeByID()
+        public EditEmployeeLoggedIn()
         {
             InitializeComponent();
         }
@@ -31,30 +30,26 @@ namespace DAD_Assignment.Stock_Management
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
 
-
             // Do not load your data at design time.
             // if (!System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
             // {
             // 	//Load your data here and assign the result to the CollectionViewSource.
-            System.Windows.Data.CollectionViewSource myCollectionViewSource = (System.Windows.Data.CollectionViewSource)this.Resources["myCollectionViewSource"];
+            System.Windows.Data.CollectionViewSource myCollectionViewSource = (System.Windows.Data.CollectionViewSource)this.Resources["Resource Key for myCollectionViewSource"];
             // 	myCollectionViewSource.Source = your data
             // }
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            string username = txtUsername.Text;
+
+            employeeDataGrid.ItemsSource = ctx.Employees.Where(em => em.Username == username).ToList();
+            personDataGrid.ItemsSource = ctx.People.Where(p => p.Employee.Username == username).ToList();
         }
 
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
             ctx.SaveChanges();
         }
-
-        private void btnSearch_Click(object sender, RoutedEventArgs e)
-        {
-            int id = int.Parse(txtEID.Text);
-
-            employeeDataGrid.ItemsSource = ctx.Employees.Where(em => em.EmployeeID == id).ToList();
-            personDataGrid.ItemsSource = ctx.People.Where(p => p.Employee.EmployeeID == id).ToList();
-
-
-
-      }
     }
 }

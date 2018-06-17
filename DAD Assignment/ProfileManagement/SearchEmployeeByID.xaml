@@ -8,13 +8,18 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl_Loaded">
     <UserControl.Resources>
+        <CollectionViewSource x:Key="personViewSource" d:DesignSource="{d:DesignInstance {x:Type DAL:Person}, CreateList=True}"/>
         <CollectionViewSource x:Key="employeeViewSource" d:DesignSource="{d:DesignInstance {x:Type DAL:Employee}, CreateList=True}"/>
+        
     </UserControl.Resources>
-    <Grid Background="White" DataContext="{StaticResource employeeViewSource}">
-
-        <DataGrid x:Name="employeeDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="168,155,160,189" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
+    <Grid Background="White" DataContext="{StaticResource personViewSource}">
+        <Label Content="Enter Employee ID" HorizontalAlignment="Left" Margin="29,47,0,0" VerticalAlignment="Top" Width="116"/>
+        <TextBox Name="txtEID" HorizontalAlignment="Left" Height="23" Margin="168,50,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="403"/>
+        <Button Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="640,47,0,0" VerticalAlignment="Top" Width="89" Height="26" Click="btnSearch_Click"/>
+        <Button Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="329,367,0,0" VerticalAlignment="Top" Width="75" Click="btnUpdate_Click"/>
+        <DataGrid x:Name="employeeDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="168,98,229,246" ItemsSource="{Binding Source={StaticResource employeeViewSource}}" EnableRowVirtualization="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="employeeIDColumn" Width="SizeToHeader" Header="Employee ID" Binding="{Binding EmployeeID}"/>
+
                 <DataGridTextColumn x:Name="office_AddressColumn" Width="SizeToHeader" Header="Office Address" Binding="{Binding Office_Address}"/>
                 <DataGridTextColumn x:Name="passwordColumn" Width="SizeToHeader" Header="Password" Binding="{Binding Password}"/>
                 <DataGridTextColumn x:Name="phone_Extension_NumberColumn" Width="SizeToHeader" Header="Phone Extension Number" Binding="{Binding Phone_Extension_Number}"/>
@@ -22,10 +27,14 @@
                 <DataGridTextColumn x:Name="usernameColumn" Width="SizeToHeader" Header="Username" Binding="{Binding Username}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="Enter Employee ID" HorizontalAlignment="Left" Margin="29,47,0,0" VerticalAlignment="Top" Width="116"/>
-        <TextBox Name="txtEID" HorizontalAlignment="Left" Height="23" Margin="168,50,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="403"/>
-        <Button Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="640,47,0,0" VerticalAlignment="Top" Width="89" Height="26" Click="btnSearch_Click"/>
-        <Button Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="331,300,0,0" VerticalAlignment="Top" Width="75" Click="btnUpdate_Click"/>
+        <DataGrid x:Name="personDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="253,226,313,116" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="addressColumn" Binding="{Binding Address}" Header="Address" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Name}" Header="Name" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="personIDColumn" Binding="{Binding PersonID}" Header="Person ID" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="telephoneColumn" Binding="{Binding Telephone}" Header="Telephone" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </UserControl>

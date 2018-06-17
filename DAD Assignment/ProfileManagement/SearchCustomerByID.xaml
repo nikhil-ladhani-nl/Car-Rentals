@@ -12,14 +12,22 @@
         <CollectionViewSource x:Key="customerViewSource" d:DesignSource="{d:DesignInstance {x:Type DAL:Customer}, CreateList=True}"/>
     </UserControl.Resources>
     <Grid Background="White" DataContext="{StaticResource personViewSource}">
-        <Button Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="309,340,0,0" VerticalAlignment="Top" Width="75" Click="btnUpdate_Click"/>
+        <Button Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="372,388,0,0" VerticalAlignment="Top" Width="75" Click="btnUpdate_Click"/>
         <Label Content="Enter Customer ID" HorizontalAlignment="Left" Margin="54,74,0,0" VerticalAlignment="Top"/>
         <TextBox Name="txtCID" HorizontalAlignment="Left" Height="26" Margin="207,74,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="333"/>
         <Button Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="609,74,0,0" VerticalAlignment="Top" Width="75" Click="btnSearch_Click"/>
-        <DataGrid x:Name="customerDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource customerViewSource}}" Margin="183,135,291,173" RowDetailsVisibilityMode="VisibleWhenSelected">
+        <DataGrid x:Name="customerDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource customerViewSource}}" Margin="258,113,296,199" RowDetailsVisibilityMode="VisibleWhenSelected" RenderTransformOrigin="0.5,0.5">
+            <DataGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.281"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </DataGrid.RenderTransform>
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="ageColumn" Binding="{Binding Age}" Header="Age" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="customerIDColumn" Binding="{Binding CustomerID}" Header="Customer ID" Width="SizeToHeader"/>
+                
                 <DataGridTextColumn x:Name="licence_NumberColumn" Binding="{Binding Licence_Number}" Header="Licence Number" Width="SizeToHeader"/>
                 <DataGridTemplateColumn x:Name="license_Expiry_DateColumn" Header="License Expiry Date" Width="SizeToHeader">
                     <DataGridTemplateColumn.CellTemplate>
@@ -28,6 +36,14 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="personDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="268,262,295,84" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="addressColumn" Binding="{Binding Address}" Header="Address" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Name}" Header="Name" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="personIDColumn" Binding="{Binding PersonID}" Header="Person ID" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="telephoneColumn" Binding="{Binding Telephone}" Header="Telephone" Width="SizeToHeader"/>
             </DataGrid.Columns>
         </DataGrid>
 
