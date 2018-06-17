@@ -51,10 +51,10 @@ namespace DAD_Assignment.Stock_Management
             int id = int.Parse(txtEID.Text);
 
             employeeDataGrid.ItemsSource = ctx.Employees.Where(em => em.EmployeeID == id).ToList();
+            personDataGrid.ItemsSource = ctx.People.Where(p => p.Employee.EmployeeID == id).ToList();
 
-           
 
 
-        }
+      }
     }
 }
