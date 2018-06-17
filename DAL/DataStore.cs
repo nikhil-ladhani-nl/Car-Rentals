@@ -37,7 +37,7 @@ namespace DAL
         {
             using (NBAEntities ctx = new NBAEntities())
             {
-                //emp.EmployeeID = login.EmployeeID;
+                emp.EmployeeID = login.EmployeeID;
                 ctx.Employees.Add(emp);
                 ctx.People.Add(psn);
                 ctx.SaveChanges();
@@ -47,7 +47,7 @@ namespace DAL
         {
             using (NBAEntities ctx = new NBAEntities())
             {
-                emp.EmployeeID = login.EmployeeID;
+
                 ctx.Customers.Add(cust);
                 ctx.People.Add(psn);
                 ctx.SaveChanges();
