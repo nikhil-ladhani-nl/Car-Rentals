@@ -51,7 +51,6 @@ namespace DAD_Assignment.Profile_Management
             }
             else
             {
-                modelDataGrid.ItemsSource = ctx.CarModels.Where(m => m.Model == model).ToList();
             }
 
         }
