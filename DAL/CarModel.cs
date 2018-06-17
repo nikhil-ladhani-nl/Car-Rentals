@@ -14,7 +14,6 @@ namespace DAL
     
     public partial class CarModel
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CarModel()
         {
             this.IndividualCars = new HashSet<IndividualCar>();
@@ -26,7 +25,6 @@ namespace DAL
         public int NumberOfSeats { get; set; }
         public double EngineSize { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<IndividualCar> IndividualCars { get; set; }
     }
 }

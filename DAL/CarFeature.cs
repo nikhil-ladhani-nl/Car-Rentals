@@ -14,7 +14,6 @@ namespace DAL
     
     public partial class CarFeature
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CarFeature()
         {
             this.IndividualCars = new HashSet<IndividualCar>();
@@ -23,7 +22,6 @@ namespace DAL
         public int FeatureID { get; set; }
         public string Car_Feature_Description { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<IndividualCar> IndividualCars { get; set; }
     }
 }

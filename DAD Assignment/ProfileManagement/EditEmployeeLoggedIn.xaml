@@ -14,7 +14,7 @@
     <Grid Background="White" Margin="0,0,-825,-275" DataContext="{StaticResource employeeViewSource}">
         <Label Content="Enter Logged in Username" HorizontalAlignment="Left" Margin="49,12,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="229,15,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="285"/>
-        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="553,15,0,0" VerticalAlignment="Top" Width="75" Click="btnSearch_Click"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="553,0,0,639" VerticalAlignment="Bottom" Width="75" Click="btnSearch_Click"/>
 
         <DataGrid x:Name="employeeDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="49,64,1149,506" RowDetailsVisibilityMode="VisibleWhenSelected">
             <DataGrid.Columns>
@@ -29,7 +29,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="addressColumn" Binding="{Binding Address}" Header="Address" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Name}" Header="Name" Width="SizeToHeader"/>
-               
+
                 <DataGridTextColumn x:Name="telephoneColumn" Binding="{Binding Telephone}" Header="Telephone" Width="SizeToHeader"/>
             </DataGrid.Columns>
         </DataGrid>
