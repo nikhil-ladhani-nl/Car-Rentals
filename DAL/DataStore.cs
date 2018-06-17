@@ -47,11 +47,8 @@ namespace DAL
         {
             using (NBAEntities ctx = new NBAEntities())
             {
-<<<<<<< HEAD
                 //emp.EmployeeID = login.EmployeeID;
-=======
 
->>>>>>> master
                 ctx.Customers.Add(cust);
                 ctx.People.Add(psn);
                 ctx.SaveChanges();

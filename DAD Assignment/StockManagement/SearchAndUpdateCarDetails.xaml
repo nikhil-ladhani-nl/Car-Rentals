@@ -15,8 +15,8 @@
     <Grid Background="Beige" DataContext="{StaticResource individualCarViewSource}">
         <Label Content="Search and Update Car Details" FontSize="30" HorizontalAlignment="Left" Margin="10,53,0,0" VerticalAlignment="Top"/>
         <Label Content="Search Car by Model:" FontSize="20" HorizontalAlignment="Left" Margin="10,112,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="modelTextBox" HorizontalAlignment="Left" FontSize="20" Height="37" Margin="272,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="236"/>
-        <Button x:Name="updateButton" Content="Update" HorizontalAlignment="Left" Margin="272,368,0,0" VerticalAlignment="Top" Width="150" Click="updateButton_Click"/>
+        <TextBox x:Name="modelTextBox" HorizontalAlignment="Left" FontSize="20" Height="37" Margin="212,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="296"/>
+        <Button x:Name="updateButton" FontSize="20" Content="Update" HorizontalAlignment="Left" Margin="198,340,0,0" VerticalAlignment="Top" Width="150" Click="updateButton_Click"/>
         <Button x:Name="searchButton" FontSize="20" Content="Search" HorizontalAlignment="Left" Margin="564,112,0,0" VerticalAlignment="Top" Width="150" Click="searchButton_Click"/>
         <Grid x:Name="grid3" DataContext="{StaticResource carFeatureViewSource}" HorizontalAlignment="Left" Margin="272,264,0,0" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
@@ -27,6 +27,21 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
         </Grid>
+        <DataGrid x:Name="carModelDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource carModelViewSource}}" Margin="198,194,378,152" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="engineSizeColumn" Binding="{Binding EngineSize}" Header="Engine Size" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="modelColumn" Binding="{Binding Model}" Header="Model" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="numberOfSeatsColumn" Binding="{Binding NumberOfSeats}" Header="Number Of Seats" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="individualCarDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="445,194,86,152" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="colourColumn" Binding="{Binding Colour}" Header="Colour" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="current_MileageColumn" Binding="{Binding Current_Mileage}" Header="Current Mileage" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="statusColumn" Binding="{Binding Status}" Header="Status" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="transmissionColumn" Binding="{Binding Transmission}" Header="Transmission" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </UserControl>

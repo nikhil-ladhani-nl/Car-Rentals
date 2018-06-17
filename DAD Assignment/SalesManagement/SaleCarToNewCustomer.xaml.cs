@@ -49,10 +49,7 @@ namespace DAD_Assignment.Sales_Management
             Customer cust = new Customer();
             cust.Age = int.Parse(ageTextBox.Text);
             cust.Licence_Number = licence_NumberTextBox.Text;
-<<<<<<< HEAD
-=======
-            
->>>>>>> master
+
             ctx.Customers.Add(cust);
 
             Person psn = new Person();
@@ -68,11 +65,6 @@ namespace DAD_Assignment.Sales_Management
             sale.Car_For_Sale_Id = Car_for_sale_ID;
             sale.Customer = cust;
             sale.Date_Sold = DateTime.Now;
-<<<<<<< HEAD
-=======
-            
->>>>>>> master
-
 
             ctx.Cars_Sold.Add(sale);
             ctx.SaveChanges();

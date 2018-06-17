@@ -51,6 +51,8 @@ namespace DAD_Assignment.Profile_Management
             }
             else
             {
+                carModelDataGrid.ItemsSource = ctx.CarModels.Where(cm => cm.Model == model).ToList();
+                individualCarDataGrid.ItemsSource = ctx.IndividualCars.Where(ic => ic.CarModel.Model == model).ToList();
             }
 
         }
