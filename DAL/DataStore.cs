@@ -43,5 +43,15 @@ namespace DAL
                 ctx.SaveChanges();
             }
         }
+        static public void addCustomer(Customer cust, Person psn)
+        {
+            using (NBAEntities ctx = new NBAEntities())
+            {
+                //emp.EmployeeID = login.EmployeeID;
+                ctx.Customers.Add(cust);
+                ctx.People.Add(psn);
+                ctx.SaveChanges();
+            }
+        }
     }
 }
