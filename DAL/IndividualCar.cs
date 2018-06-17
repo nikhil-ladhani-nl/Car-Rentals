@@ -14,7 +14,6 @@ namespace DAL
     
     public partial class IndividualCar
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public IndividualCar()
         {
             this.Cars_Sold = new HashSet<Cars_Sold>();

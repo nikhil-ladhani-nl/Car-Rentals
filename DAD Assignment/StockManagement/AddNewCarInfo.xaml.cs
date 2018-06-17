@@ -41,35 +41,55 @@ namespace DAD_Assignment.Profile_Management
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            CarFeature cf = new CarFeature();
-            cf.Car_Feature_Description = car_Feature_DescriptionTextBox.Text;
+            string validation1 = Validation.ValidEmptyFields(carDetailsGrid);
+            if (validation1 != null)
+            {
+                MessageBox.Show(validation1);
+            }
+            else
+            {
+                string validation2 = Validation.ValidEmptyFields(carModelGrid);
+                if (validation2 != null)
+                {
+                    MessageBox.Show(validation2);
+                }
+                else
+                {
+                    string validation3 = Validation.ValidEmptyFields(carModelGrid);
+                    if (validation3 != null)
+                    {
+                        MessageBox.Show(validation3);
+                    }
+                    else
+                    {
+                        CarModel cm = new CarModel();
+                        cm.EngineSize = double.Parse(engineSizeTextBox.Text);
+                        cm.Manufacturer = manufacturerTextBox.Text;
+                        cm.Model = modelTextBox.Text;
+                        cm.NumberOfSeats = int.Parse(numberOfSeatsTextBox.Text);
 
-            CarModel cm = new CarModel();
-            cm.EngineSize = double.Parse(engineSizeTextBox.Text);
-            cm.Manufacturer = manufacturerTextBox.Text;
-            cm.Model = modelTextBox.Text;
-            cm.NumberOfSeats = int.Parse(numberOfSeatsTextBox.Text);
+                        IndividualCar ic = new IndividualCar();
+                        ic.Body_Type = body_TypeTextBox.Text;
+                        ic.Colour = colourTextBox.Text;
+                        ic.Current_Mileage = current_MileageTextBox.Text;
+                        ic.Date_Imported = date_ImportedTextBox.Text;
+                        ic.Manufacture_Year = int.Parse(manufacture_YearTextBox.Text);
+                        ic.Status = statusTextBox.Text;
+                        ic.Transmission = transmissionTextBox.Text;
 
-            IndividualCar ic = new IndividualCar();
-            ic.Body_Type = body_TypeTextBox.Text;
-            ic.Colour = colourTextBox.Text;
-            ic.Current_Mileage = current_MileageTextBox.Text;
-            ic.Date_Imported = date_ImportedTextBox.Text;
-            ic.Manufacture_Year = int.Parse(manufacture_YearTextBox.Text);
-            ic.Status = statusTextBox.Text;
-            ic.Transmission = transmissionTextBox.Text;
-            
-            DataStore.addNewCarDetails(cf,cm,ic);
-            MessageBox.Show("Car added successfully");
+                        CarFeature cf = new CarFeature();
+                        cf.Car_Feature_Description = car_Feature_DescriptionTextBox.Text;
+                        DataStore.addNewCarDetails(cf, cm, ic);
+                        MessageBox.Show("Car added successfully");
+                    }
+                }
+            }                     
             body_TypeTextBox.Clear(); colourTextBox.Clear();
             current_MileageTextBox.Clear(); date_ImportedTextBox.Clear();
             manufacturerTextBox.Clear(); manufacture_YearTextBox.Clear();
             statusTextBox.Clear(); transmissionTextBox.Clear();
             engineSizeTextBox.Clear(); modelTextBox.Clear();
             numberOfSeatsTextBox.Clear();
-
-
-
 
         }
     }

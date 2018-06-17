@@ -45,14 +45,16 @@ namespace DAD_Assignment.Profile_Management
         private void searchButton_Click(object sender, RoutedEventArgs e)
         {
             string model = modelTextBox.Text;
-            if (modelTextBox == null)
-            {
-                MessageBox.Show("Please enter correct Model Name");
-            }
-            else
+            if (modelTextBox != null)
             {
                 carModelDataGrid.ItemsSource = ctx.CarModels.Where(cm => cm.Model == model).ToList();
                 individualCarDataGrid.ItemsSource = ctx.IndividualCars.Where(ic => ic.CarModel.Model == model).ToList();
+                
+            }
+            else
+            {
+                MessageBox.Show("Please enter correct Model Name");
+
             }
 
         }
