@@ -41,9 +41,33 @@ namespace DAD_Assignment.ProfileManagement
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            int id = int.Parse(txtPID.Text);
+            string output = Validation.ValidEmptyFields(grid1);
+            if (output != null)
+            {
+                MessageBox.Show(output);
+            }
+            else
+            {
+                int personID;
+                if (int.TryParse(personIDTextBox.Text, out personID))
+                {
 
-            personDataGrid.ItemsSource = ctx.People.Where(p => p.PersonID == id).ToList();
+                }
+                else
+                {
+                    MessageBox.Show("Please enter ID as number not as text");
+                }
+            }
+            try
+            {
+                int id = int.Parse(personIDTextBox.Text);
+
+                personDataGrid.ItemsSource = ctx.People.Where(p => p.PersonID == id).ToList();
+            }
+            catch
+            {
+                MessageBox.Show("Please Try Again");
+            }
         }
     }
 }

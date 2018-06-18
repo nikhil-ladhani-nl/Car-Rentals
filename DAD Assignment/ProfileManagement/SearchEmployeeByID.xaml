@@ -10,11 +10,9 @@
     <UserControl.Resources>
         <CollectionViewSource x:Key="personViewSource" d:DesignSource="{d:DesignInstance {x:Type DAL:Person}, CreateList=True}"/>
         <CollectionViewSource x:Key="employeeViewSource" d:DesignSource="{d:DesignInstance {x:Type DAL:Employee}, CreateList=True}"/>
-        
+
     </UserControl.Resources>
     <Grid Background="White" DataContext="{StaticResource personViewSource}">
-        <Label Content="Enter Employee ID" HorizontalAlignment="Left" Margin="29,47,0,0" VerticalAlignment="Top" Width="116"/>
-        <TextBox Name="txtEID" HorizontalAlignment="Left" Height="23" Margin="168,50,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="403"/>
         <Button Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="640,47,0,0" VerticalAlignment="Top" Width="89" Height="26" Click="btnSearch_Click"/>
         <Button Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="329,367,0,0" VerticalAlignment="Top" Width="75" Click="btnUpdate_Click"/>
         <DataGrid x:Name="employeeDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="168,98,229,246" ItemsSource="{Binding Source={StaticResource employeeViewSource}}" EnableRowVirtualization="True" AutoGenerateColumns="False">
@@ -31,10 +29,20 @@
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="addressColumn" Binding="{Binding Address}" Header="Address" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Name}" Header="Name" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="personIDColumn" Binding="{Binding PersonID}" Header="Person ID" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="telephoneColumn" Binding="{Binding Telephone}" Header="Telephone" Width="SizeToHeader"/>
+                 <DataGridTextColumn x:Name="telephoneColumn" Binding="{Binding Telephone}" Header="Telephone" Width="SizeToHeader"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Grid x:Name="grid2" DataContext="{StaticResource employeeViewSource}" HorizontalAlignment="Left" Margin="210,47,0,0" VerticalAlignment="Top" Width="361">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="Enter Employee ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="employeeIDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="3,4,-116,4" Grid.Row="0" Text="{Binding EmployeeID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="241"/>
+        </Grid>
 
     </Grid>
 </UserControl>

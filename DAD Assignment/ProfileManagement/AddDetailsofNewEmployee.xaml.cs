@@ -50,20 +50,27 @@ namespace DAD_Assignment.Stock_Management
             {
                 MessageBox.Show(output);
             }
+            try
+            {
+                Person psn = new Person();
+                psn.Address = addressTextBox.Text;
+                psn.Name = nameTextBox.Text;
+                psn.Telephone = telephoneTextBox.Text;
 
-            Person psn = new Person();
-            psn.Address = addressTextBox.Text;
-            psn.Name = nameTextBox.Text;
-            psn.Telephone = telephoneTextBox.Text;
+                Employee emp = new Employee();
+                emp.Office_Address = office_AddressTextBox.Text;
+                emp.Password = passwordTextBox.Text;
+                emp.Phone_Extension_Number = phone_Extension_NumberTextBox.Text;
+                emp.Role = roleTextBox.Text;
+                emp.Username = usernameTextBox.Text;
 
-            Employee emp = new Employee();
-            emp.Office_Address = office_AddressTextBox.Text;
-            emp.Password = passwordTextBox.Text;
-            emp.Phone_Extension_Number = phone_Extension_NumberTextBox.Text;
-            emp.Role = roleTextBox.Text;
-            emp.Username = usernameTextBox.Text;
-            DataStore.addEmployee(emp, psn);
-            MessageBox.Show("Employee added successfully");
+                DataStore.addEmployee(emp, psn);
+                MessageBox.Show("Employee added successfully");
+            }
+            catch
+            {
+                MessageBox.Show("Please fill out all the details");
+            }
         }
     }
 }

@@ -71,11 +71,11 @@ namespace DAD_Assignment
             carsalesPanel.Children.Add(new AddDetailsofNewEmployee());
         }
 
-        private void DSalesCustomers_Click(object sender, RoutedEventArgs e)
-        {
-            carsalesPanel.Children.Clear();
-            carsalesPanel.Children.Add(new DisplaySalesInfoOnCustomer());
-        }
+        //private void DSalesCustomers_Click(object sender, RoutedEventArgs e)
+        //{
+        //    carsalesPanel.Children.Clear();
+        //    carsalesPanel.Children.Add(new DisplaySalesInfoOnCustomer());
+        //}
 
         private void SUCustomer_Click(object sender, RoutedEventArgs e)
         {
@@ -105,6 +105,12 @@ namespace DAD_Assignment
         {
             carsalesPanel.Children.Clear();
             carsalesPanel.Children.Add(new SearchCustomerByID());
+        }
+
+        private void EditEmployeeLoggedIn_Click(object sender, RoutedEventArgs e)
+        {
+            carsalesPanel.Children.Clear();
+            carsalesPanel.Children.Add(new EditEmployeeLoggedIn());
         }
     }
 }

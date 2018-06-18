@@ -85,9 +85,6 @@
     <Compile Include="ProfileManagement\AddDetailsofNewEmployee.xaml.cs">
       <DependentUpon>AddDetailsofNewEmployee.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ProfileManagement\DisplaySalesInfoOnCustomer.xaml.cs">
-      <DependentUpon>DisplaySalesInfoOnCustomer.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ProfileManagement\SearchCustomerByID.xaml.cs">
       <DependentUpon>SearchCustomerByID.xaml</DependentUpon>
     </Compile>
@@ -144,10 +141,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ProfileManagement\AddDetailsofNewEmployee.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ProfileManagement\DisplaySalesInfoOnCustomer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
