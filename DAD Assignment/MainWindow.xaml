@@ -13,7 +13,7 @@
             <MenuItem Header="Profile Management">
                 <MenuItem x:Name="ANEmployee" Header="Add New Employee" Click="ANEmployee_Click" />
                     <MenuItem x:Name="VPersonID" Header="View Person by ID" Click="VPersonID_Click"></MenuItem>
-                <MenuItem x:Name="DSalesCustomers" Header="Display Car Sales to Customer" Click="DSalesCustomers_Click"/>
+                
                 <MenuItem Header="Search and Update Profile">
                     <MenuItem x:Name="SUCustomer" Header="Customer" Click="SUCustomer_Click"/>
                     <MenuItem x:Name="SUEmployee" Header="Employee" Click="SUEmployee_Click"/>
@@ -30,7 +30,7 @@
             </MenuItem>
             <MenuItem x:Name="MStaff" Header="Staff">
                 <MenuItem Header="Profile Management">
-                    <MenuItem x:Name="DSaleCustomers" Header="Display Car Sales to Customer"/>
+                    <MenuItem x:Name="EditEmployeeLoggedIn" Header="Edit Logged in Employee" Click="EditEmployeeLoggedIn_Click"/>
                     <MenuItem x:Name="StaffVPersonID" Header="View Person by ID" Click="StaffVPersonID_Click"></MenuItem>
                     <MenuItem Header="Search and Update Profile">
                         <MenuItem x:Name="StaffSUCustomer" Header="Customer" Click="StaffSUCustomer_Click"/>

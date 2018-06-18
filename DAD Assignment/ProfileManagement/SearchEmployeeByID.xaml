@@ -29,7 +29,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="addressColumn" Binding="{Binding Address}" Header="Address" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Name}" Header="Name" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="telephoneColumn" Binding="{Binding Telephone}" Header="Telephone" Width="SizeToHeader"/>
+                 <DataGridTextColumn x:Name="telephoneColumn" Binding="{Binding Telephone}" Header="Telephone" Width="SizeToHeader"/>
             </DataGrid.Columns>
         </DataGrid>
         <Grid x:Name="grid2" DataContext="{StaticResource employeeViewSource}" HorizontalAlignment="Left" Margin="210,47,0,0" VerticalAlignment="Top" Width="361">
