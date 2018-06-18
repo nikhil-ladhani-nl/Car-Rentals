@@ -63,8 +63,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="StockManagement\DisplaySelectedCarModel.xaml.cs">
-      <DependentUpon>DisplaySelectedCarModel.xaml</DependentUpon>
+    <Compile Include="StockManagement\DisplayCarModel.xaml.cs">
+      <DependentUpon>DisplayCarModel.xaml</DependentUpon>
     </Compile>
     <Compile Include="ProfileManagement\EditEmployeeLoggedIn.xaml.cs">
       <DependentUpon>EditEmployeeLoggedIn.xaml</DependentUpon>
@@ -92,7 +92,7 @@
       <DependentUpon>SearchEmployeeByID.xaml</DependentUpon>
     </Compile>
     <Compile Include="Validation.cs" />
-    <Page Include="StockManagement\DisplaySelectedCarModel.xaml">
+    <Page Include="StockManagement\DisplayCarModel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -55,7 +55,7 @@ namespace DAD_Assignment
         private void SACDetails_Click(object sender, RoutedEventArgs e)
         {
             carsalesPanel.Children.Clear();
-            carsalesPanel.Children.Add(new DisplaySelectedCarModel());
+            carsalesPanel.Children.Add(new DisplayCarModel());
         }
 
         private void logoutButton_Click(object sender, RoutedEventArgs e)

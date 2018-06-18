@@ -55,7 +55,7 @@ namespace DAD_Assignment.Profile_Management
                 }
                 else
                 {
-                    string validation3 = Validation.ValidEmptyFields(carModelGrid);
+                    string validation3 = Validation.ValidEmptyFields(carFeatureGrid);
                     if (validation3 != null)
                     {
                         MessageBox.Show(validation3);
