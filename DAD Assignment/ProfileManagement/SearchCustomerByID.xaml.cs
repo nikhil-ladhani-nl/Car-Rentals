@@ -34,10 +34,34 @@ namespace DAD_Assignment.Stock_Management
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            int id = int.Parse(txtCID.Text);
+            string output = Validation.ValidEmptyFields(grid1);
+            if (output != null)
+            {
+                MessageBox.Show(output);
+            }
+            else
+            {
+                int customerID;
+                if (int.TryParse(customerIDTextBox.Text, out customerID))
+                {
 
-            customerDataGrid.ItemsSource = ctx.Customers.Where(c => c.CustomerID == id).ToList();
-            personDataGrid.ItemsSource = ctx.People.Where(p => p.Customer.CustomerID == id).ToList();
+                }
+                else
+                {
+                    MessageBox.Show("Please enter ID as number not as text");
+                }
+            }
+            try
+            {
+                int id = int.Parse(customerIDTextBox.Text);
+
+                customerDataGrid.ItemsSource = ctx.Customers.Where(c => c.CustomerID == id).ToList();
+                personDataGrid.ItemsSource = ctx.People.Where(p => p.Customer.CustomerID == id).ToList();
+            }
+            catch
+            {
+                MessageBox.Show("Please Try Again");
+            }
            
         }
 

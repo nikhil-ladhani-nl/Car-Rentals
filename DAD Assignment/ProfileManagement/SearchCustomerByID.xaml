@@ -12,11 +12,9 @@
         <CollectionViewSource x:Key="customerViewSource" d:DesignSource="{d:DesignInstance {x:Type DAL:Customer}, CreateList=True}"/>
     </UserControl.Resources>
     <Grid Background="White" DataContext="{StaticResource personViewSource}">
-        <Button Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="372,388,0,0" VerticalAlignment="Top" Width="75" Click="btnUpdate_Click"/>
-        <Label Content="Enter Customer ID" HorizontalAlignment="Left" Margin="54,74,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="txtCID" HorizontalAlignment="Left" Height="26" Margin="207,74,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="333"/>
+        <Button Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="337,326,0,0" VerticalAlignment="Top" Width="75" Click="btnUpdate_Click"/>
         <Button Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="609,74,0,0" VerticalAlignment="Top" Width="75" Click="btnSearch_Click"/>
-        <DataGrid x:Name="customerDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource customerViewSource}}" Margin="258,113,296,199" RowDetailsVisibilityMode="VisibleWhenSelected" RenderTransformOrigin="0.5,0.5">
+        <DataGrid x:Name="customerDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource customerViewSource}}" Margin="55,117,499,195" RowDetailsVisibilityMode="VisibleWhenSelected" RenderTransformOrigin="0.5,0.5">
             <DataGrid.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -27,7 +25,7 @@
             </DataGrid.RenderTransform>
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="ageColumn" Binding="{Binding Age}" Header="Age" Width="SizeToHeader"/>
-                
+
                 <DataGridTextColumn x:Name="licence_NumberColumn" Binding="{Binding Licence_Number}" Header="Licence Number" Width="SizeToHeader"/>
                 <DataGridTemplateColumn x:Name="license_Expiry_DateColumn" Header="License Expiry Date" Width="SizeToHeader">
                     <DataGridTemplateColumn.CellTemplate>
@@ -38,14 +36,24 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="personDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="268,262,295,84" RowDetailsVisibilityMode="VisibleWhenSelected">
+        <DataGrid x:Name="personDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="519,129,94,217" RowDetailsVisibilityMode="VisibleWhenSelected">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="addressColumn" Binding="{Binding Address}" Header="Address" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Name}" Header="Name" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="personIDColumn" Binding="{Binding PersonID}" Header="Person ID" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="telephoneColumn" Binding="{Binding Telephone}" Header="Telephone" Width="SizeToHeader"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Grid x:Name="grid1" DataContext="{StaticResource customerViewSource}" HorizontalAlignment="Left" Margin="159,77,0,0" VerticalAlignment="Top" Width="346">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="Enter Customer ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="customerIDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="3,4,-93,3" Grid.Row="0" Text="{Binding CustomerID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="217"/>
+        </Grid>
 
     </Grid>
 </UserControl>

@@ -44,17 +44,43 @@ namespace DAD_Assignment.Stock_Management
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
             ctx.SaveChanges();
+
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            int id = int.Parse(txtEID.Text);
+            string output = Validation.ValidEmptyFields(grid2);
+            if (output != null)
+            {
+                MessageBox.Show(output);
+            }
+            else
+            {
+                int employeeID;
+                if (int.TryParse(employeeIDTextBox.Text, out employeeID))
+                {
 
-            employeeDataGrid.ItemsSource = ctx.Employees.Where(em => em.EmployeeID == id).ToList();
-            personDataGrid.ItemsSource = ctx.People.Where(p => p.Employee.EmployeeID == id).ToList();
+                }
+                else
+                {
+                    MessageBox.Show("Please enter ID as number not as text");
+                }
+            }
+            try {
+                int id = int.Parse(employeeIDTextBox.Text);
+
+                employeeDataGrid.ItemsSource = ctx.Employees.Where(em => em.EmployeeID == id).ToList();
+                personDataGrid.ItemsSource = ctx.People.Where(p => p.Employee.EmployeeID == id).ToList();
+            }
+            catch
+            {
+                MessageBox.Show("Please Try Again");
+            }
 
 
 
-      }
+
+
+        }
     }
 }

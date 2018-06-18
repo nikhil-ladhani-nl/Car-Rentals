@@ -6,13 +6,13 @@
              xmlns:local="clr-namespace:DAD_Assignment.ProfileManagement"
              xmlns:DAL="clr-namespace:DAL;assembly=DAL" x:Class="DAD_Assignment.ProfileManagement.ViewPersonByID"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300" Loaded="UserControl_Loaded">
+             d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl_Loaded">
     <UserControl.Resources>
         <CollectionViewSource x:Key="personViewSource" d:DesignSource="{d:DesignInstance {x:Type DAL:Person}, CreateList=True}"/>
     </UserControl.Resources>
     <Grid Background="White" Margin="0,0,-231,-25" DataContext="{StaticResource personViewSource}">
 
-        <DataGrid x:Name="personDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="135,106,165,117" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
+        <DataGrid x:Name="personDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="135,106,665,261" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="addressColumn" Width="SizeToHeader" Header="Address" Binding="{Binding Address}"/>
                 <DataGridTextColumn x:Name="nameColumn" Width="SizeToHeader" Header="Name" Binding="{Binding Name}"/>
@@ -20,9 +20,18 @@
                 <DataGridTextColumn x:Name="telephoneColumn" Width="SizeToHeader" Header="Telephone" Binding="{Binding Telephone}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="Enter Person ID" HorizontalAlignment="Left" Margin="23,52,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="txtPID" HorizontalAlignment="Left" Height="23" Margin="135,52,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="231"/>
         <Button Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="402,52,0,0" VerticalAlignment="Top" Width="75" Click="btnSearch_Click"/>
+        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="66,53,0,0" VerticalAlignment="Top" Width="300">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="Person ID:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="personIDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="3,4,-93,4" Grid.Row="0" Text="{Binding PersonID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="217"/>
+        </Grid>
 
     </Grid>
 </UserControl>
